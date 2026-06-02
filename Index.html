@@ -6,11 +6,16 @@
 <title>SS-Interiors</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -21,8 +26,8 @@ body{
 header{
     background:#222;
     color:white;
-    padding:20px;
     text-align:center;
+    padding:15px;
     position:sticky;
     top:0;
     z-index:1000;
@@ -34,8 +39,8 @@ nav{
 
 nav a{
     color:white;
-    margin:0 15px;
     text-decoration:none;
+    margin:0 10px;
     font-weight:bold;
 }
 
@@ -44,7 +49,7 @@ nav a:hover{
 }
 
 .hero{
-    height:80vh;
+    height:50vh;
     background:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600') center/cover;
     display:flex;
     justify-content:center;
@@ -55,114 +60,110 @@ nav a:hover{
 .hero h1{
     color:white;
     background:rgba(0,0,0,0.6);
-    padding:20px;
-    border-radius:10px;
-    max-width:900px;
+    padding:15px;
+    border-radius:8px;
+    max-width:800px;
 }
 
 section{
-    padding:60px 10%;
+    padding:25px 5%;
 }
 
 h2{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:15px;
 }
 
 .services{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
 }
 
 .card{
-    background:#f4f4f4;
-    padding:25px;
+    background:#f5f5f5;
+    padding:20px;
     border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
     text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-3px);
     transition:0.3s;
 }
 
-/* Slider */
+/* Gallery */
 
-.slider{
-    width:70%;
-    max-width:900px;
-    margin:auto;
-    overflow:hidden;
+.gallery{
+    display:flex;
+    overflow-x:auto;
+    gap:12px;
+    scroll-behavior:smooth;
+    padding-bottom:10px;
+}
+
+.gallery::-webkit-scrollbar{
+    height:8px;
+}
+
+.gallery::-webkit-scrollbar-thumb{
+    background:#888;
     border-radius:10px;
 }
 
-.slides{
-    display:flex;
-    width:300%;
-    animation:slide 12s infinite;
-}
-
-.slides img{
-    width:33.333%;
-    height:500px;
+.gallery img{
+    width:350px;
+    height:250px;
     object-fit:cover;
+    border-radius:10px;
+    flex-shrink:0;
 }
 
-@keyframes slide{
-    0%,30%{
-        transform:translateX(0);
-    }
-
-    33%,63%{
-        transform:translateX(-33.333%);
-    }
-
-    66%,96%{
-        transform:translateX(-66.666%);
-    }
-
-    100%{
-        transform:translateX(0);
-    }
-}
+/* Contact */
 
 .contact{
     background:#222;
     color:white;
     text-align:center;
+    padding:30px 5%;
 }
 
 .contact p{
-    margin:10px 0;
+    margin:8px 0;
 }
 
 footer{
     background:#111;
     color:white;
     text-align:center;
-    padding:15px;
+    padding:12px;
 }
 
 @media(max-width:768px){
 
-    .hero h1{
-        font-size:1.8rem;
+    .hero{
+        height:40vh;
     }
 
-    .slides img{
-        height:300px;
+    .hero h1{
+        font-size:1.5rem;
+    }
+
+    .gallery img{
+        width:280px;
+        height:200px;
     }
 
     nav a{
-        display:block;
-        margin:10px 0;
+        display:inline-block;
+        margin:5px;
     }
 }
-</style>
 
+</style>
 </head>
+
 <body>
 
 <header>
@@ -181,21 +182,24 @@ footer{
 </div>
 
 <section id="about">
+
     <h2>About Us</h2>
 
     <p>
         Specialists in Plywood Work, PVC, WPC, Profile Work, Cupboards,
         Modular Kitchens, TV Units, Crockery Units and Duco Painting.
 
-        PVC & WPC Benefits include Long Life, Hygienic Finish,
-        Water Resistance, No Fungus Growth and Easy Maintenance.
+        PVC & WPC products offer long life, water resistance, hygienic finish,
+        fungus resistance and low maintenance.
 
         We create stunning residential and commercial interiors that combine
         functionality, comfort and elegance.
     </p>
+
 </section>
 
 <section id="services">
+
     <h2>Our Services</h2>
 
     <div class="services">
@@ -206,39 +210,42 @@ footer{
         </div>
 
         <div class="card">
-            <h3>TV Units</h3>
-            <p>Elegant entertainment wall designs.</p>
+            <h3>Wardrobes</h3>
+            <p>Premium storage and cupboard designs.</p>
         </div>
 
         <div class="card">
-            <h3>Wardrobes & Cupboards</h3>
-            <p>Functional storage with premium finishes.</p>
+            <h3>TV Units</h3>
+            <p>Elegant entertainment wall units.</p>
         </div>
 
         <div class="card">
             <h3>Commercial Interiors</h3>
-            <p>Professional office and retail space designs.</p>
+            <p>Modern office and retail space solutions.</p>
         </div>
 
     </div>
+
 </section>
 
 <section id="gallery">
+
     <h2>Featured Projects</h2>
 
-    <div class="slider">
+    <div class="gallery">
 
-        <div class="slides">
+        <img src="https://raw.githubusercontent.com/samee00417/GlobalInteriors/main/Sumer.png" alt="Project 1">
 
-            <img src="https://raw.githubusercontent.com/samee00417/GlobalInteriors/main/Sumer.png" alt="Project 1">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200" alt="Project 2">
 
-            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200" alt="Project 2">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200" alt="Project 3">
 
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200" alt="Project 3">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200" alt="Project 4">
 
-        </div>
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200" alt="Project 5">
 
     </div>
+
 </section>
 
 <section id="contact" class="contact">
