@@ -15,6 +15,7 @@
 
 body{
     line-height:1.6;
+    color:#333;
 }
 
 header{
@@ -22,33 +23,50 @@ header{
     color:white;
     padding:20px;
     text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    margin-top:10px;
 }
 
 nav a{
     color:white;
     margin:0 15px;
     text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#d4af37;
 }
 
 .hero{
     height:80vh;
-    background:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600')
-               center/cover;
+    background:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600') center/cover;
     display:flex;
     justify-content:center;
     align-items:center;
-    color:white;
     text-align:center;
 }
 
 .hero h1{
-    font-size:3rem;
-    background:rgba(0,0,0,0.5);
+    color:white;
+    background:rgba(0,0,0,0.6);
     padding:20px;
+    border-radius:10px;
+    max-width:900px;
 }
 
 section{
     padding:60px 10%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:30px;
 }
 
 .services{
@@ -61,17 +79,53 @@ section{
     background:#f4f4f4;
     padding:25px;
     border-radius:10px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:15px;
+.card:hover{
+    transform:translateY(-5px);
+    transition:0.3s;
 }
 
-.gallery img{
+/* Slider */
+
+.slider{
     width:100%;
+    max-width:900px;
+    margin:auto;
+    overflow:hidden;
     border-radius:10px;
+}
+
+.slides{
+    display:flex;
+    width:300%;
+    animation:slide 12s infinite;
+}
+
+.slides img{
+    width:33.333%;
+    height:500px;
+    object-fit:cover;
+}
+
+@keyframes slide{
+    0%,30%{
+        transform:translateX(0);
+    }
+
+    33%,63%{
+        transform:translateX(-33.333%);
+    }
+
+    66%,96%{
+        transform:translateX(-66.666%);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
 }
 
 .contact{
@@ -80,116 +134,127 @@ section{
     text-align:center;
 }
 
+.contact p{
+    margin:10px 0;
+}
+
 footer{
     background:#111;
     color:white;
     text-align:center;
     padding:15px;
 }
-</style>
-</head>
 
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:1.8rem;
+    }
+
+    .slides img{
+        height:300px;
+    }
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+}
+</style>
+
+</head>
 <body>
 
 <header>
-<h2>SS-Interiors</h2>
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#gallery">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
+    <h2>SS-Interiors</h2>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 <div class="hero">
-<h1>Transforming Spaces Into Beautiful Experiences</h1>
+    <h1>Transforming Spaces Into Beautiful Experiences</h1>
 </div>
 
 <section id="about">
-<h2>About Us</h2>
-<p>
-Specialists In: Plywood Work, Pvc, Wpc, Profile Work, Cupbord, Modular Kitchen, T.V. Unit, Crockery Unit & Also Duco PaintingMaterial BenefitsPvc & Wpc Benefits: Long Life, Hygienic, Water Proof, No Fungus & Free Bacteria, It Attracts And Feel Good.
-We create stunning residential and commercial interiors that combine functionality, comfort, and elegance.
-</p>
+    <h2>About Us</h2>
+
+    <p>
+        Specialists in Plywood Work, PVC, WPC, Profile Work, Cupboards,
+        Modular Kitchens, TV Units, Crockery Units and Duco Painting.
+
+        PVC & WPC Benefits include Long Life, Hygienic Finish,
+        Water Resistance, No Fungus Growth and Easy Maintenance.
+
+        We create stunning residential and commercial interiors that combine
+        functionality, comfort and elegance.
+    </p>
 </section>
 
 <section id="services">
-<h2>Our Services</h2>
-<div class="services">
-<div class="card">
-<h3>Residential Design</h3>
-<p>Luxury home interiors tailored to your lifestyle.</p>
-</div>
+    <h2>Our Services</h2>
 
-<div class="card">
-<h3>Commercial Design</h3>
-<p>Modern office and retail space design solutions.</p>
-</div>
+    <div class="services">
 
-<div class="card">
-<h3>3D Visualization</h3>
-<p>See your space before construction begins.</p>
-</div>
-</div>
+        <div class="card">
+            <h3>Modular Kitchen</h3>
+            <p>Modern and customized kitchen solutions.</p>
+        </div>
+
+        <div class="card">
+            <h3>TV Units</h3>
+            <p>Elegant entertainment wall designs.</p>
+        </div>
+
+        <div class="card">
+            <h3>Wardrobes & Cupboards</h3>
+            <p>Functional storage with premium finishes.</p>
+        </div>
+
+        <div class="card">
+            <h3>Commercial Interiors</h3>
+            <p>Professional office and retail space designs.</p>
+        </div>
+
+    </div>
 </section>
 
 <section id="gallery">
-<h2>Featured Projects</h2>
-<div class="gallery">
-<img src="https://raw.githubusercontent.com/samee00417/GlobalInteriors/main/Sumer.png"
-alt="Sumer"
-style="max-width:100%; height:auto;">
-<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800">
-</div>
+    <h2>Featured Projects</h2>
 
-<style>
-.slider {
-    width: 100%;
-    overflow: hidden;
-}
+    <div class="slider">
 
-.slides {
-    display: flex;
-    width: 300%;
-    animation: slide 12s infinite;
-}
+        <div class="slides">
 
-.slides img {
-    width: 100%;
-    flex: 1 0 100%;
-}
+            <img src="https://raw.githubusercontent.com/samee00417/GlobalInteriors/main/Sumer.png" alt="Project 1">
 
-@keyframes slide {
-    0%, 30% {
-        transform: translateX(0);
-    }
-    33%, 63% {
-        transform: translateX(-100%);
-    }
-    66%, 96% {
-        transform: translateX(-200%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-</style>
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200" alt="Project 2">
 
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200" alt="Project 3">
 
+        </div>
 
-    
+    </div>
 </section>
 
 <section id="contact" class="contact">
-<h2>Contact Us</h2>
-<p>Email:krishnaak50@gmail.com</p>
-<p>Phone:+918949312278</p>
-<p>Address:Bahadurpura, Hyderabad - T.S.</p>
+
+    <h2>Contact Us</h2>
+
+    <p><strong>Email:</strong> krishnaak50@gmail.com</p>
+
+    <p><strong>Phone:</strong> +91 89493 12278</p>
+
+    <p><strong>Address:</strong> Bahadurpura, Hyderabad, Telangana</p>
+
 </section>
 
 <footer>
-© 2026 SS-Interiors
+    © 2026 SS-Interiors. All Rights Reserved.
 </footer>
 
 </body>
