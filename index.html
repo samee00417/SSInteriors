@@ -26,13 +26,54 @@ body{
 }
 
 header{
-    background:#8A1538;
-    color:white;
-    text-align:center;
-    padding:15px;
-    position:sticky;
-    top:0;
-    z-index:1000;
+background:#8A1538;
+color:white;
+text-align:center;
+padding:15px;
+position:sticky;
+top:0;
+z-index:1000;
+position:relative;
+}
+
+.header-title{
+font-size:18px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.header-logo{
+position:absolute;
+top:10px;
+right:20px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.header-logo img{
+width:55px;
+height:55px;
+object-fit:contain;
+border-radius:6px;
+background:white;
+padding:2px;
+}
+
+.logo-text{
+text-align:left;
+line-height:1.2;
+}
+
+.logo-name{
+font-size:16px;
+font-weight:bold;
+color:white;
+}
+
+.logo-tagline{
+font-size:12px;
+color:#f5d27d;
 }
 
 nav{
@@ -46,9 +87,7 @@ nav a{
     font-weight:bold;
 }
 
-<!-- nav a:hover{
-     color:#d4af37; 
-}-->
+
 nav a:hover{
     text-decoration:underline;
 }
@@ -85,20 +124,6 @@ h2{
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
 }
-<!--
-.card{
-    background:#f5f5f5;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
-    text-align:center;
-}
-
-.card:hover{
-    transform:translateY(-3px);
-    transition:0.3s;
-}
--->
 
 .card{
     background:#f5f5f5;
@@ -170,23 +195,79 @@ footer{
 
 @media(max-width:768px){
 
-    .hero{
-        height:40vh;
-    }
+.hero{
+    height:40vh;
+}
 
-    .hero h1{
-        font-size:1.5rem;
-    }
+.hero h1{
+    font-size:1.5rem;
+}
 
-    .gallery img{
-        width:280px;
-        height:200px;
-    }
+.gallery img{
+    width:280px;
+    height:200px;
+}
 
-    nav a{
-        display:inline-block;
-        margin:5px;
-    }
+.header-logo{
+    position:static;
+    justify-content:center;
+    margin:10px 0;
+    max-width:none;
+}
+
+.header-title{
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+nav{
+    margin-top:5px;
+}
+
+nav a{
+    display:inline-block;
+    margin:5px;
+}
+
+
+}
+
+
+.header-logo{
+position:absolute;
+top:10px;
+right:20px;
+display:flex;
+align-items:center;
+gap:10px;
+max-width:250px;
+}
+
+.header-logo img{
+width:55px;
+height:55px;
+object-fit:contain;
+border-radius:6px;
+background:white;
+padding:2px;
+}
+
+.logo-text{
+text-align:left;
+line-height:1.2;
+}
+
+.logo-name{
+font-size:15px;
+font-weight:bold;
+color:white;
+}
+
+.logo-tagline{
+font-size:11px;
+color:#f5d27d;
+}
+
 }
 
 </style>
@@ -195,26 +276,32 @@ footer{
 <body>
 
 <header>
-    <!-- <h2>SS-Interiors</h2> -->
-<!-- <header> --> 
-    <div class="logo-container">
-       <!--  <img src="https://raw.githubusercontent.com/ssinteriors/SSInteriors/main/Images/logo.jpeg" alt="SS Interiors Logo" class="logo"> -->
-        <span class="logo-caption">
-            <strong>SSS</strong> | Designing Luxury Interiors for Your Home
-        </span>
-    </div>
-<!-- </header>	 -->
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+
+<div class="header-title">
+    SS Interiors
+</div>
+
+<div class="header-logo">
+    <img src="https://raw.githubusercontent.com/ssinteriors/SSInteriors/main/Images/logo.jpeg" alt="SS Interiors Logo">
+
+    <div class="logo-text">
+        <div class="logo-name">SS Interiors</div>
+        <div class="logo-tagline">Luxury by Design</div>
+    </div>
+</div>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
 </header>
 
 <div class="hero">
-    <h1>SS Interiors</h1>
+    <h1>SS | Designing Luxury Interiors for Your Home</h1>
 </div>
 
 <section id="about">
