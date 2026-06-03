@@ -171,7 +171,7 @@ h2{
 #services,
 #gallery,
 #contact{
-    scroll-margin-top:110px;
+    scroll-margin-top:180px;
 }
 /* Contact */
 
@@ -195,29 +195,56 @@ footer{
 
 @media(max-width:768px){
 
+    .header-title{
+        font-size:14px;
+        margin-bottom:8px;
+    }
+
     .header-logo{
-        position:static;
+        position:relative !important;
+        top:auto !important;
+        right:auto !important;
         display:flex;
         justify-content:center;
         align-items:center;
         margin:10px auto;
     }
 
-    .header-title{
-        margin-bottom:5px;
+    .logo-text{
+        display:none;
+    }
+
+    .header-logo img{
+        width:45px;
+        height:45px;
     }
 
     nav{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:10px;
         margin-top:10px;
     }
 
     nav a{
-        display:inline-block;
-        margin:5px 8px;
+        margin:0;
         font-size:16px;
     }
-}
 
+    .hero{
+        height:40vh;
+    }
+
+    .hero h1{
+        font-size:1.5rem;
+    }
+
+    .gallery img{
+        width:280px;
+        height:200px;
+    }
+}
 
 .header-logo{
 position:absolute;
